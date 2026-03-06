@@ -1,0 +1,31 @@
+{
+  "MicrosoftTelemetryConnectionString": "",
+  "useApproximateVersion": true,
+  "githubRunner": "ubuntu-latest",
+  "doNotPublishApps": true,
+  "$schema": "https://raw.githubusercontent.com/microsoft/AL-Go/Actions/4410f1adfd3788a54362b1c3ac81f172e9af3ad4/.Modules/settings.schema.json",
+  "runs-on": "ubuntu-latest",
+  "UseProjectDependencies": true,
+  "incrementalBuilds": {
+    "onPush": true
+  },
+  "artifact": "////nextmajor",
+  "githubRunnerShell": "pwsh",
+  "conditionalSettings": [
+    {
+      "settings": {
+        "workflowConcurrency": [
+          "group: ${{ github.workflow }}-${{ github.ref }}",
+          "cancel-in-progress: true"
+        ]
+      },
+      "workflows": [
+        "CI/CD"
+      ]
+    }
+  ],
+  "type": "PTE",
+  "templateUrl": "https://github.com/businesscentralapps/tmpbX5QHc-PTE@main",
+  "useCompilerFolder": true,
+  "shell": "pwsh"
+}
